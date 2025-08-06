@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plant Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Plant Health Tracker</h1>
+
+    <label for="category">Choose a category:</label>
+    <select id="category" onchange="loadPlants(); changeBackgroundColor();">
+      <option value="">--Select--</option>
+      <option value="house">Houseplants</option>
+      <option value="outdoor">Outdoor Plants</option>
+      <option value="tropical">Tropical Plants</option>
+      <option value="succulent">Succulents</option>
+    </select>
+
+    <label for="plant">Choose a plant:</label>
+    <select id="plant" onchange="displayPlantImage()">
+      <option value="">--Select a category first--</option>
+    </select>
+
+    <img id="plantImage" src="" alt="Selected plant image" />
+
+    <h3>Enter your plant conditions:</h3>
+    <label for="temp">Temperature (°F):</label>
+    <input type="number" id="temp" />
+
+    <label for="humidity">Humidity (%):</label>
+    <input type="number" id="humidity" />
+
+    <label for="watering">Times watered per week:</label>
+    <input type="number" id="watering" />
+
+    <button onclick="giveFeedback()">Get Feedback</button>
+
+    <div id="feedback"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
